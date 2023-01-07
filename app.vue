@@ -1,13 +1,12 @@
 <template>
-  <div>
-    <NuxtLayout>
-      <h1>12</h1>
-      <ContentDoc />
-    </NuxtLayout>
-    <NuxtPage />
-  </div>
+    <div>
+        <NuxtLayout>
+            <h1>12</h1>
+            <NuxtPage />
+        </NuxtLayout>
+    </div>
 </template>
 <script setup>
-const { data } = await useAsyncData("home", () => queryContent("/").findOne());
-console.log(data.value);
+const { navigation } = await useAsyncNavigation();
+console.log(navigation.value);
 </script>
