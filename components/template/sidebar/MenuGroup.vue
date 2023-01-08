@@ -1,8 +1,10 @@
 <template>
-    <ul v-for="menu in navigation" :key="menu._path">
+    <ul class="pl-4" v-for="menu in navigation" :key="menu._path">
         <template-sidebar-menu-item :menu="menu" />
     </ul>
 </template>
 <script setup>
-const { navigation } = await useAsyncNavigation();
+defineProps({
+    navigation: Array,
+});
 </script>
